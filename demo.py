@@ -1,2 +1,2 @@
 print("hello")
- print("new update")
+print("new update")
