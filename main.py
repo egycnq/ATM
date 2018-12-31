@@ -1,5 +1,8 @@
 from DB import *
+from chk import *
 
-id=input("enter your Card ID: ")
+id=chkinput(input("Enter your ID: "))
+id.chkid()
+
 
 
