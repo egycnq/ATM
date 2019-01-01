@@ -10,3 +10,6 @@ user_amount=int(input("enter your balance"))
 withdraw=withdrewchk(user_amount,id.id)
 withdraw.chkamount()#ده اللي بيتاكد من ان الفلوس موجودة في الماكنة وحسابه
 withdraw.jafer() #ده اللي بيخصم
+withdraw.osama()
+
+

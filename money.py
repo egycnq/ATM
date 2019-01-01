@@ -8,7 +8,6 @@ except:
 cursor1.execute("select x,y,z FROM money")
 x= cursor1.fetchone()
 total=x[0]*50+x[1]*100+x[2]*200
-
 class withdrewchk :
     def __init__(self,usr_amount,id):
         self.user_amount=usr_amount
@@ -33,3 +32,28 @@ class withdrewchk :
         new=y[0]-self.user_amount
         newobj=data(self.id,new)
         newobj.update()
+    def osama(self):
+        x=self.user_amount/200
+        i, d = divmod(x, 1)
+        cursor1.execute("select x,y,z FROM money")
+        money=cursor1.fetchone()
+        X=money[0]
+        Y=money[1]
+        Z=money[2]
+        print(X-5)
+        if(i<=Z):
+            Z=Z-i
+        else:
+            temp=Z
+            Z=0
+            i=i-temp
+            if(i*2<=Y):
+             Y=Y-i*2
+            elif(i*4<=X):
+                X=X-i*4
+            else:
+                 print("Your Operation Cannot Be Processed")
+
+
+
+
