@@ -1,15 +1,16 @@
 import pymysql
 try:
-    db = pymysql.connect("localhost", "admin", "admin", "testdb")
+    db = pymysql.connect("localhost", "admin", "admin","testdb")
     cursor = db.cursor()
 except:
 
     print("error connecting to database")
 
 class data:
-    def __init__(self,id,amount=0):
+    def __init__(self,id,amount=0,pin=0):
         self.id = id
         self.amount = amount
+        self.pin =pin
 
     def update(self):
 
@@ -23,6 +24,14 @@ class data:
             if(i[0]==self.id):
               find=1
         if(find==1):
+            return 1
+        else:
+            return 0
+
+    def findpin(self):
+        cursor.execute("select Pin FROM users WHERE CardID =%s",self.id)
+        pin = cursor.fetchone()
+        if (pin[0] ==self.pin):
             return 1
         else:
             return 0
