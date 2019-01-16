@@ -12,9 +12,9 @@ class chkinput:
         find = data(int(self.id))
         if( find.find()==0):
             print("plz enter a correct ID")
-        else:
-            print("Correct ID :D")
             return 1
+        else:
+            return 0
 
     def chkpin(self):
             if (self.pin == ''):
@@ -22,6 +22,6 @@ class chkinput:
             find = data(self.id,0,int(self.pin))
             if (find.findpin() == 0):
                 print("plz enter a correct PIN")
-            else:
-                print("Correct PIN :D")
                 return 1
+            else:
+                return 0
